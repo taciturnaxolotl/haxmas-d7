@@ -137,6 +137,7 @@ function makeBoundaryPointDraggable(element, pointName) {
         boundaryPoints[pointName].y = newTop / rect.height;
         
         updateTriangleOutline();
+        updateStarPosition();
     }
 
     function closeDragElement() {
@@ -149,6 +150,19 @@ function makeBoundaryPointDraggable(element, pointName) {
         console.log(`left: { x: ${boundaryPoints.left.x}, y: ${boundaryPoints.left.y} }`);
         console.log(`right: { x: ${boundaryPoints.right.x}, y: ${boundaryPoints.right.y} }`);
     }
+}
+
+function updateStarPosition() {
+    const container = document.getElementById("tree-container");
+    const rect = container.getBoundingClientRect();
+    const star = document.getElementById("star");
+    
+    const topX = boundaryPoints.top.x * rect.width;
+    const topY = boundaryPoints.top.y * rect.height;
+    
+    star.style.left = topX + "px";
+    star.style.top = (topY - 40) + "px";
+    star.style.transform = "translate(-50%, -50%)";
 }
 
 function initializeBoundaryPoints() {
@@ -173,6 +187,7 @@ function initializeBoundaryPoints() {
     makeBoundaryPointDraggable(rightPoint, "right");
     
     updateTriangleOutline();
+    updateStarPosition();
 }
 
 function createOrnaments() {
