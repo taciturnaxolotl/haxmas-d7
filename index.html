@@ -1,0 +1,29 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>Tacy's Tree</title>
+    <link rel="stylesheet" href="style.css">  
+</head>  
+<body>  
+    <div id="header">  
+        <h1 class="important-text">Tacy's Tree</h1>  
+        <h2 id="date">December 19, 2025</h2>
+        <p id="instructions">Press <kbd>R</kbd> to randomize ornaments • Drag boundary points to adjust triangle</p>
+    </div>
+    <div id="tree-container" class="container">  
+        <img src="img/tree.png" id="tree">  
+        <div id="star">⭐</div>  
+        <div id="boundary">
+            <div class="boundary-point" id="point-top" data-point="top">⚫</div>
+            <div class="boundary-point" id="point-left" data-point="left">⚫</div>
+            <div class="boundary-point" id="point-right" data-point="right">⚫</div>
+            <svg id="triangle-outline">
+                <polygon id="triangle-shape" points="" fill="none" stroke="rgba(91, 192, 222, 0.5)" stroke-width="2" stroke-dasharray="5,5"/>
+            </svg>
+        </div>
+        <div id="decorations"></div>
+    </div>
+    <script src="script.js"></script>
+</body>  
+</html>
