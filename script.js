@@ -59,6 +59,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	dateText.innerText = `${days}/${month}/${year}`;
 
-	star.addEventListener("click", changeStar);
+	star.addEventListener("click", (e) => {
+		e.stopPropagation();
+		changeStar();
+	});
 	document.querySelector("main").addEventListener("click", addOrnament);
 });
