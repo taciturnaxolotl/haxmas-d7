@@ -16,12 +16,12 @@ main {
 }
 
 star {
-  display: inline-block;
-  position: relative;
-  margin: 0 -17rem;
-  margin-top: 4.5rem;
+  position: absolute;
+  top: 5.5rem;
+  left: 50%;
+  transform: translateX(-50%);
   font-size: 3rem;
-  z-index: 5;
+  z-index: 15;
   cursor: pointer;
 }
 
